@@ -1,22 +1,7 @@
 # Synthadoc
 
 ```
-      .-+###############+-.
-    .##                   ##.
-   ##    .----.   .----.    ##
-  ##    /######\ /######\    ##
-  ##    |######| |######|    ##
-  ##    | [SD] | | wiki |    ##
-  ##    |######| |######|    ##
-  ##    \######/ \######/    ##
-   ##    '----'   '----'    ##
-    '##                   ##'
-      '-+###############+-'
 
-       S Y N T H A D O C
-    Community Edition  v0.1.0
-  ────────────────────────────────
-  Domain-agnostic LLM wiki engine
 ```
 
 [![CI](https://github.com/william-Johnason/synthadoc/actions/workflows/ci.yml/badge.svg)](https://github.com/william-Johnason/synthadoc/actions/workflows/ci.yml)
@@ -986,3 +971,6 @@ Target: week of 2026-04-25.
 - Demo walkthrough: [docs/demo-guide.md](docs/demo-guide.md)
 - Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Issues: [GitHub Issues](../../issues)
+
+## Acknowledgment
+This project is based on code from another GitHub repository. I have modified and extended it significantly to fit our use case, including performance improvements and integration with our MCP-based chatbot. Ongoing changes are being managed and shared with the team through this repository.
