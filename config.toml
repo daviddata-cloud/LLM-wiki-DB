@@ -1,0 +1,8 @@
+[agents]
+default = { provider = "ollama", model = "phi3" }
+
+[server]
+port = 7070
+
+[hooks]
+# leave empty to keep hooks off
