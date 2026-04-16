@@ -3,6 +3,114 @@
 ```
 LLM Wiki
 A pattern for building personal knowledge bases using LLMs.
+The LLM Wiki Knowledge Database implements a knowledge compilation architecture that complements LLM reasoning by introducing a persistent, structured knowledge layer.
+
+Conceptually:
+
+LLM (First Brain) → probabilistic reasoning engine
+LLM Wiki DB (Second Brain) → deterministic, persistent knowledge store
+1. System Architecture
+
+The system shifts from query-time retrieval (RAG) to compile-time knowledge structuring:
+
+Pipeline:
+
+Ingestion
+Source data: markdown, documents, code, web content
+Preprocessing and normalization
+Knowledge Compilation
+Entity extraction (people, concepts, artifacts)
+Relationship mapping (links, backlinks, references)
+Structured output (e.g., index.md, topic pages)
+Storage Layer
+File-based (markdown/wiki) + database-backed indexing
+Supports versioning, updates, and incremental rebuilds
+Query Layer
+Natural language interface (LLM-driven)
+Structured retrieval (graph traversal, indexed lookup)
+Hybrid reasoning (LLM + deterministic context)
+2. Agent-Oriented Design
+
+The system leverages multi-agent orchestration:
+
+IngestAgent
+Parses and normalizes raw input
+Triggers knowledge compilation
+QueryAgent
+Translates user queries into structured retrieval steps
+Combines graph traversal with LLM reasoning
+LintAgent
+Ensures consistency (links, schema, formatting)
+Detects contradictions and gaps
+Orchestrator
+Manages parallel execution
+Applies cost controls, retries, and backoff strategies
+3. Knowledge Model
+
+Unlike vector-only systems, this approach builds a structured knowledge graph layer:
+
+Nodes: entities, topics, documents
+Edges: relationships (references, dependencies, semantic links)
+Artifacts: markdown pages, indexes, logs
+
+Key features:
+
+Bidirectional linking (backlinks)
+Centralized indexing (index.md)
+Incremental updates instead of full recomputation
+4. RAG vs. Knowledge Compilation
+Aspect	Traditional RAG	LLM Wiki DB
+Retrieval	Similarity search (vector)	Structured + indexed lookup
+Timing	Query-time (lazy)	Pre-compiled (eager)
+Context	Fragmented chunks	Coherent, linked knowledge
+Reasoning	Limited cross-doc	Graph-aware traversal
+Consistency	Variable	Higher (persistent structure)
+
+Limitations of RAG:
+
+Weak multi-hop reasoning
+No persistent memory layer
+Recomputes context per query
+
+Advantages of LLM Wiki:
+
+Deterministic structure + probabilistic reasoning
+Better contradiction detection
+Reusable and evolvable knowledge base
+5. Local-First + Deployment Model
+Local-first architecture
+Data remains on localhost
+No external storage dependency
+Execution environment
+Docker-based MCP server
+CLI + REST interfaces
+LLM abstraction layer
+Pluggable providers (e.g., Gemini, Groq)
+Vendor-agnostic design
+6. Human-in-the-Loop Design
+
+The system is not fully autonomous—it is human-guided:
+
+Humans:
+Curate sources
+Define questions and priorities
+Validate outputs
+Agents:
+Perform transformation and structuring
+Maintain consistency and linkage
+Automate repetitive knowledge tasks
+7. Key Insight
+
+This architecture redefines the role of LLM systems:
+
+From stateless retrieval assistants (RAG)
+→ to stateful knowledge systems with persistent memory
+
+The result is a self-evolving knowledge base that improves over time and supports:
+
+Complex reasoning workflows
+Research and analysis pipelines
+Personalized knowledge environments
 
 This is an idea file, it is designed to be copy pasted to your own LLM Agent (e.g. OpenAI Codex, Claude Code, OpenCode / Pi, or etc.). Its goal is to communicate the high level idea, but your agent will build out the specifics in collaboration with you.
 
